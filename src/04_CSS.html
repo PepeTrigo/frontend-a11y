@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:300"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,900"
+      rel="stylesheet"
+    />
+    <title>CSS</title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        CSS
+      </h1>
+    </header>
+    <main>
+      <h2>Hiding elements</h2>
+      <h3>Opacity property</h3>
+      <p>
+        Saves the space in the layout and it is accessible by keyboard
+        navigation and screen readers.
+      </p>
+      <div class="outlined">
+        <button class="opacity--0">I´m transparent</button>
+      </div>
+      <pre>
+        <code class="language-css">
+          .opacity--0 {
+            opacity: 0;
+          }
+        </code>
+      </pre>
+      <h3>Visibility property</h3>
+      <p>
+        Saves the space in the layout but it is not accessible by keyboard
+        navigation or screen readers.
+      </p>
+      <div class="outlined">
+        <button class="visibility--hidden">I´m hiding</button>
+      </div>
+      <pre>
+        <code class="language-css">
+          .visibility--hidden {
+              visibility: hidden;
+          }
+        </code>
+      </pre>
+      <h3>Display property</h3>
+      <p>
+        Removes the item from the layout and it is not accessible by keyboard
+        navigation or screen readers.
+      </p>
+      <div class="outlined">
+        <button class="display--none">I´m not displaying</button>
+      </div>
+      <pre>
+        <code class="language-css">
+          .display--none {
+              display: none;
+          }
+        </code>
+      </pre>
+      <h3>Visually hidden helper class</h3>
+      <p>
+        Helper class often used to hide content but still make it reachable by
+        keyboard navigation and screen reader.
+      </p>
+      <div class="outlined">
+        <button class="visually-hidden">I´m hiding</button>
+      </div>
+      <pre>
+        <code class="language-css">
+          .visually-hidden { 
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+          }
+        </code>
+      </pre>
+      <h3>Relative font sizing</h3>
+      <p>
+        Browsers allow users to set the default font-size, if relative measure
+        units are used to implement the design, we will make sure it holds when
+        the font is scaled.
+      </p>
+      <dl>
+        <dt>em:</dt>
+        <dd>
+          <p>
+            Relative to the specified font-size of the nearest ancestor.
+          </p>
+          <pre>
+            <code class="language-css">
+              /* Extended practice to facilitate calculation of the em value */
+
+              html {
+                font-size: 62.5%
+              }
+
+              p {
+                font-size: 1.6em; // 16px
+              }
+
+              /* Recomended approach */
+
+              html {
+                font-size: 100%; /* User defined setting */
+              }
+
+              body {
+                font-size: 1em; /* 16px */
+              }
+
+              ul {
+                font-size: 0.75em; /* 12px */
+              }
+
+              li {
+                font-size: 1em; /* Relative to the ul element 12px */
+              }
+            </code>
+          </pre>
+        </dd>
+        <dt>rem (root em):</dt>
+        <dd>
+          Relative to the root element of the document, &lt;html&gt;
+        </dd>
+        <dd>
+          <pre>
+            <code class="language-css">
+                html {
+                  font-size: 100%; /* Default 16px browser setting */
+                }
+
+                body {
+                  font-size: 1rem; /* 16px */
+                }
+  
+                ul {
+                  font-size: 0.75rem; /* 12px */
+                }
+  
+                li {
+                  font-size: 1rem; /* Relative to the root element 16px */
+                }
+            </code>
+          </pre>
+        </dd>
+      </dl>
+      <p>
+        To calculate the size of the font in pixels, just divide the desired
+        size of the font by its context (nearest ancestor with declared
+        font-size defined for em, root element for rem)
+      </p>
+      <p>
+        The computed properties inspector will give you the size in pixels.
+      </p>
+    </main>
+    <footer>
+      <nav class="main-nav">
+        <fed-nav-panel>
+          <ul class="panel-content">
+            <li class="nav-item"><a href="index.html">Index</a></li>
+            <li class="nav-item"><a href="01_A11yIntro.html">01 Intro</a></li>
+            <li class="nav-item"><a href="02_HTML.html">02 HTML</a></li>
+            <li class="nav-item"><a href="03_Focus.html">03 Focus</a></li>
+            <li class="nav-item"><a href="04_CSS.html">04 CSS</a></li>
+            <li class="nav-item"><a href="05_ARIA.html">05 WAI-ARIA</a></li>
+          </ul>
+        </fed-nav-panel>
+      </nav>
+    </footer>
+  </body>
+</html>

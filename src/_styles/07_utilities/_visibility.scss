@@ -1,0 +1,30 @@
+.opacity--0 {
+  opacity: 0;
+
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.display--none {
+  display: none;
+
+  &:focus {
+    display: initial;
+  }
+}
+
+.visibility--hidden {
+  visibility: hidden;
+}
+
+.visually-hidden:not(:focus) {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
