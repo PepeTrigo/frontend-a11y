@@ -50,24 +50,17 @@
       </dl>
       <h2>Implicit reachable elements by the tab key</h2>
       <ul>
+        <li><em>a</em> elements that have an href attribute</li>
+        <li><em>button</em> elements</li>
         <li>
-          a elements that have an href attribute
+          <em>input</em> elements whose type attribute are not in the hidden
+          state
         </li>
+        <li><em>select</em> elements</li>
+        <li><em>textarea</em> elements</li>
         <li>
-          button elements
-        </li>
-        <li>
-          input elements whose type attribute are not in the hidden state
-        </li>
-        <li>
-          select elements
-        </li>
-        <li>
-          textarea elements
-        </li>
-        <li>
-          summary elements that are the first summary element child of a details
-          element
+          <em>summary</em> elements that are the first summary element child of
+          a details element
         </li>
         <li>
           Elements with a draggable attribute set, if that would enable the user
@@ -75,7 +68,9 @@
           without the use of a pointing device
         </li>
         <li>
-          Editing hosts
+          Editing hosts (A node that is either an HTML element with a
+          contenteditable attribute set to the true state, or the HTML element
+          child of a document whose designMode is enabled.)
         </li>
         <li>
           Browsing context containers
@@ -121,7 +116,9 @@
       </h2>
       <p>
         If a UI component is reachable by keyboard navigation, it should be also
-        leavable using a the same mechanism.
+        leavable using the same mechanism. Avoid locking the focus in an area,
+        always provide escape functionality and return focus to the trigger
+        element.
       </p>
       <ul>
         <li>

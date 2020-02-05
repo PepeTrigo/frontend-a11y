@@ -192,11 +192,19 @@
 
         <dt>aria-busy</dt>
         <dd>
-          Indicates whether changes to an area should be temporarely ignored.
+          <p>Indicates whether changes to an area should be temporarely ignored.</p>
+          <div role="search">
+            <input type="text"/>
+            <button>
+              <button>Go search</button>
+            </button>
+          </div>
+          <section aria-busy="true">
+            <ul aria-live="polite" aria-relevant="additions removals">
+              ...
+            <ul>
+          </section>
         </dd>
-        <dt>
-          aria-expanded
-        </dt>
       </dl>
       <ul>
         <li>
