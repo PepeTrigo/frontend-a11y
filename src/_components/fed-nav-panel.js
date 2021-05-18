@@ -141,18 +141,31 @@ class FedNavPanel extends HTMLElement {
   connectedCallback() {
     this._root.appendChild(this._$template);
     this.toggle = this._root.querySelector("#panel-toggle");
-    this.toggle.addEventListener("click", event => {
+    this.toggle.addEventListener("click", (event) => {
       this.toggleState(this.toggle, " panel__toggle--open");
       this.toggleAttribute("open");
     });
+    this.panel = this._root.querySelector(".panel__nav");
+    this.content = this._root.querySelector("slot");
+    this.content.assignedElements()[0].style.display = "none";
   }
 
   toggleState(item, state) {
     if (item.className.indexOf(state) !== -1) {
       item.className = item.className.replace(state, "");
+      this.panel.addEventListener("transitionend", this.remove, { once: true });
     } else {
+      this.content.assignedElements()[0].style.display = "block";
       item.className += state;
     }
+  }
+
+  add() {
+    this.style.display = "initial";
+  }
+
+  remove() {
+    this.querySelector("slot").assignedElements()[0].style.display = "none";
   }
 }
 
